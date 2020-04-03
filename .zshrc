@@ -1,3 +1,7 @@
+export PATH=/usr/local/bin/git:$PATH
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
+
 HISTFILE=~/.zsh_history
 HISTSIZE=30000
 SAVEHIST=30000

@@ -1,3 +1,4 @@
+export LSCOLORS=gxfxcxdxbxegedabagacad
 export PATH=/usr/local/bin/git:$PATH
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH

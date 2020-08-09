@@ -24,6 +24,7 @@ setopt list_packed
 zstyle ':completion:*' list-colors ''
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source <(kubectl completion zsh)
 
 # prompt
 autoload -Uz vcs_info
@@ -44,6 +45,7 @@ alias his='history'
 alias less='less -NM'
 alias diff='colordiff'
 alias df='df -h'
+alias k='kubectl'
 alias brewout='brew outdated && brew cask outdated'
 
 # peco

@@ -46,7 +46,7 @@ alias less='less -NM'
 alias diff='colordiff'
 alias df='df -h'
 alias k='kubectl'
-alias brewout='brew outdated && brew cask outdated'
+alias brewout='brew outdated'
 
 # peco
 function peco-select-history() {

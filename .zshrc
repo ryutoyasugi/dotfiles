@@ -1,11 +1,11 @@
 export LSCOLORS=gxfxcxdxbxegedabagacad
-export PATH=/usr/local/bin/git:$PATH
+export PATH=/opt/homebrew/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
 
 HISTFILE=~/.zsh_history
-HISTSIZE=30000
-SAVEHIST=30000
+HISTSIZE=99999
+SAVEHIST=99999
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
 setopt share_history
@@ -42,12 +42,11 @@ alias ls='ls -aFG'
 alias ll='ls -lh'
 alias vi='vim'
 alias his='history'
-alias cat='bat -P'
+alias cat='bat -pP'
 alias less='less -NM'
 alias diff='colordiff'
 alias df='df -h'
 alias k='kubectl'
-alias brewout='brew outdated'
 
 # peco
 function peco-select-history() {
@@ -57,5 +56,3 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
-
-alias ghp='cd $(ghq list -p | peco)'

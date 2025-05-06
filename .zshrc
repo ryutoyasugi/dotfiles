@@ -2,6 +2,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export PATH=/opt/homebrew/bin:$PATH
 export GOPATH=$HOME/go
 export PATH=$GOPATH/bin:$PATH
+export KUBECTL_EXTERNAL_DIFF=colordiff
 
 HISTFILE=~/.zsh_history
 HISTSIZE=99999
@@ -27,6 +28,7 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source <(kubectl completion zsh)
 
 # prompt
+source $(brew --prefix)/etc/zsh-kubectl-prompt/kubectl.zsh
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true

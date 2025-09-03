@@ -58,3 +58,14 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
+
+function peco-kubectl-context() {
+  local selected_context=$(kubectl config view -o go-template --template='{{range .contexts}}{{.name}}{{"\n"}}{{end}}' | peco --query "$LBUFFER")
+  if [ -n "$selected_context" ]; then
+    BUFFER="kubectl config use-context $selected_context"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-kubectl-context
+bindkey '^k' peco-kubectl-context

@@ -37,7 +37,7 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{yellow}+"
 zstyle ':vcs_info:*' formats "%F{cyan}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd() { vcs_info }
-PROMPT='%T %~ %F{magenta}$%f '
+PROMPT='%T %~ %(?.%F{magenta}$.%F{red}$)%f '
 RPROMPT='${vcs_info_msg_0_}'
 
 alias ls='ls -aFG'

@@ -16,7 +16,7 @@ setopt nonomatch
 
 # completion
 autoload -Uz compinit
-compinit -u
+compinit
 if [ -e /usr/local/share/zsh-completions ]; then
   fpath=(/usr/local/share/zsh-completions $fpath)
 fi

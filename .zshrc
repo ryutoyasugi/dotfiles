@@ -69,3 +69,15 @@ function peco-kubectl-context() {
 }
 zle -N peco-kubectl-context
 bindkey '^k' peco-kubectl-context
+
+peco-src () {
+  local repo=$(ghq list | peco --query "$LBUFFER")
+  if [ -n "$repo" ]; then
+    repo=$(ghq list --full-path --exact $repo)
+    BUFFER="cd ${repo}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N peco-src
+bindkey '^g' peco-src
